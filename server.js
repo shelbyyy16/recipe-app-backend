@@ -1,6 +1,9 @@
 // Require modules
 const express = require('express');
-  
+const logger = require('morgan');
+require('dotenv').config();
+require('./config/database');
+
 // Create the Express app
 const app = express();
   
