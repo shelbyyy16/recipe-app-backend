@@ -9,7 +9,6 @@ router.get('/', async (req, res) => {
     res.json(recipes);
   } catch (error) {
     console.error('Error fetching recipes:', error);
-    res.status(500).json({ error: 'Internal Server Error' });
   }
 });
 
@@ -23,7 +22,6 @@ router.post('/', async (req, res) => {
     res.json({ message: 'Recipe added successfully', recipe: newRecipe });
   } catch (error) {
     console.error('Error adding recipe:', error);
-    res.status(500).json({ error: 'Internal Server Error' });
   }
 });
 
