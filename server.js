@@ -2,6 +2,7 @@
 const express = require('express');
 const logger = require('morgan');
 const cors = require('cors');
+const mongoURI = process.env.DATABASE_URL;
 require('dotenv').config();
 require('./config/database');
 
@@ -28,6 +29,8 @@ app.post('/api/recipes', (req, res) => {
 });
   
 // Tell the app to listen on port 3000
-app.listen(3000, function() {
-  console.log('Listening on port 3000');
+app.set("port", process.env.PORT || 3000);
+
+app.listen(app.get("port"), () => {
+  console.log(`✅ PORT: ${app.get("port")} 🌟`);
 });
