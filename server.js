@@ -1,7 +1,6 @@
 const express = require('express');
 const logger = require('morgan');
 const cors = require('cors');
-const mongoURI = process.env.DATABASE_URL;
 require('dotenv').config();
 require('./config/database');
 
