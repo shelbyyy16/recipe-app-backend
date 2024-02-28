@@ -5,16 +5,16 @@ require('dotenv').config();
 require('./config/database');
 
 const app = express();
-  
+
 app.use(cors());
-app.use(express.json()); 
+app.use(express.json());
 
 // Mount routes
-app.use('/', require('./api/recipes'));
-
 app.get('/', function(req, res, next) {
-    res.send('<h1>Hello Express</h1>');
+    res.send('<h1>Recipe App API</h1>');
 });
+
+app.use('/api/recipes', require('./api/recipes'));
 
 app.set("port", process.env.PORT || 3000);
 
